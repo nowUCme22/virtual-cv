@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Marné Vermaak</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin: 24px 0 8px 0; }
+  .filter-bar button {
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .filter-bar button.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 24px; }
+  .project-tag { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 6px; }
+  .project-role { font-size: 0.9rem; margin-top: 10px; }
+  .repo-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 600; font-size: 0.88rem; }
+  .repo-private { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+  .repo-none { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body data-page="projects">
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Marné <span>Vermaak</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="resume.html" data-page="resume">Resume</a></li>
+      <li><a href="skills.html" data-page="skills">Skills</a></li>
+      <li><a href="projects.html" data-page="projects">Projects</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="tight">
+  <div class="wrap reveal">
+    <div class="section-label">Projects</div>
+    <h1 style="font-size:2rem;">Things I've built and contributed to</h1>
+    <p style="max-width:560px;">A mix of professional client work and academic projects. Client-owned code is kept private, as you'd expect, but the description and my role are here for each.</p>
+    <div class="filter-bar">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="professional">Professional</button>
+      <button data-filter="academic">Academic</button>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="projects-grid">
+
+      <div class="card reveal" data-category="professional">
+        <div class="project-tag">Code Café</div>
+        <h3>Die Fabriek</h3>
+        <p>A production manufacturing-management system covering raw materials, consumables, manufacturing, job cards, quality control, and finished-product inventory for a production-facility client. Live and in production use.</p>
+        <div class="project-role"><strong>My role:</strong> Backend lead, responsible for the majority of the API endpoints and domain services, and for the database design, schema migrations, and data integrity.</div>
+        <div class="repo-private">&#128274; Private repository, client project</div>
+      </div>
+
+      <div class="card reveal" data-category="professional">
+        <div class="project-tag">Code Café</div>
+        <h3>Dencity</h3>
+        <p>A mobile-first web app proof-of-concept showing live restaurant "busyness" data, piloted in Cape Town.</p>
+        <div class="project-role"><strong>My role:</strong> Primary developer, frontend and backend. Built the React/TypeScript frontend and the Python (FastAPI) backend, and deployed the application end-to-end.</div>
+        <div class="repo-private">&#128274; Private repository, client project</div>
+      </div>
+
+      <div class="card reveal" data-category="professional">
+        <div class="project-tag">Agrisol</div>
+        <h3>Elsa</h3>
+        <p>A WhatsApp AI agent built for an agricultural client that receives photos of delivery notes, extracts the data via an AI-driven pipeline, and automatically creates a matching sales record. Deployed and used live in production.</p>
+        <div class="project-role"><strong>My role:</strong> Built the admin/monitoring dashboard and notification system, owned the Supabase schema and migrations, and configured the n8n automation workflow.</div>
+        <div class="repo-private">&#128274; Private repository, client project</div>
+      </div>
+
+      <div class="card reveal" data-category="professional">
+        <div class="project-tag">Agrisol, Hackathon</div>
+        <h3>KosKas</h3>
+        <p>A one-day internal hackathon project: a pantry-and-recipe app that suggests recipes based on ingredients on hand and highlights what's still needed to buy.</p>
+        <div class="project-role"><strong>My role:</strong> Pair-programmed closely with a teammate, contributing the ingredient data model extensions and the photo-attachment feature.</div>
+        <a class="repo-link" href="https://github.com/AnthonieDeKlerk78/koskas" target="_blank" rel="noopener">&#128279; View on GitHub</a>
+      </div>
+
+      <div class="card reveal" data-category="professional">
+        <div class="project-tag">Agrisol, IT Intern</div>
+        <h3>Lesson-Plan Telegram Agent</h3>
+        <p>A personal learning project built to explore workflow automation: an AI-powered agent, built in n8n and delivered via a Telegram chatbot, that generates a complete lesson plan automatically from a requested grade level and topic.</p>
+        <div class="project-role"><strong>My role:</strong> Designed and built the end-to-end workflow, working with the manager to learn the tool.</div>
+      </div>
+
+      <div class="card reveal" data-category="professional">
+        <div class="project-tag">Agrisol, IT Intern</div>
+        <h3>Trekker</h3>
+        <p>A workforce clock-in/clock-out web application, used as a learning project to build up backend development skills.</p>
+        <div class="project-role"><strong>My role:</strong> Built the backend (domain model, database schema, and REST API endpoints) while the manager handled the frontend.</div>
+        <div class="repo-private">&#128274; Private repository</div>
+      </div>
+
+      <div class="card reveal" data-category="academic">
+        <div class="project-tag">Database Design &middot; CMPG311 (2026)</div>
+        <h3>OceanView Aquarium</h3>
+        <p>A group project following the full Database Life Cycle to design and build an operational database system for a fictional aquarium, covering animal, tank, worker, feeding, maintenance, clinic, and rescue-mission management.</p>
+        <div class="project-role"><strong>My role:</strong> Contributed to the business analysis, conceptual/logical design (business rules, ER diagrams), and the physical implementation in Oracle SQL Developer.</div>
+        <div class="repo-none">Repository coming soon</div>
+      </div>
+
+      <div class="card reveal" data-category="academic">
+        <div class="project-tag">Network Design &middot; CMPG315 (2026)</div>
+        <h3>PT Business Network</h3>
+        <p>A segmented business network design (Cisco Packet Tracer) for a fictional IT premises, using a star topology with VLAN-based department isolation and a central Layer-3 managed switch.</p>
+        <div class="project-role"><strong>My role:</strong> Group Leader. Led a 3-member group, compiled the itemised hardware/cabling/labour budget, and produced the final project documentation.</div>
+        <div class="repo-none">Repository coming soon</div>
+      </div>
+
+      <div class="card reveal" data-category="academic">
+        <div class="project-tag">Individual Project &middot; CMPG212 (2025)</div>
+        <h3>Verdict: Crime Case Tracker</h3>
+        <p>A cross-platform mobile application using C# and .NET MAUI to support investigators in creating, managing, and tracking criminal case investigations, with a visual case timeline and offline SQLite storage.</p>
+        <div class="project-role"><strong>My role:</strong> Designed and developed the entire application individually.</div>
+        <a class="repo-link" href="https://github.com/nowUCme22/CMPG212" target="_blank" rel="noopener">&#128279; View on GitHub</a>
+      </div>
+
+      <div class="card reveal" data-category="academic">
+        <div class="project-tag">Group Project &middot; CMPG213 &amp; CMPG223 (2025)</div>
+        <h3>Soup Link System</h3>
+        <p>A resource management system to assist soup kitchens with administration, inventory control, and reporting, built across a two-semester Analysis &amp; Design to Build cycle.</p>
+        <div class="project-role"><strong>My role:</strong> Project Manager. Coordinated team roles, structured the GitHub repository, led weekly meetings, and oversaw progress to final submission.</div>
+        <a class="repo-link" href="https://github.com/nowUCme22/CMPG213" target="_blank" rel="noopener">&#128279; CMPG213 repo</a>
+        &nbsp;&nbsp;
+        <a class="repo-link" href="https://github.com/nowUCme22/CMPG223" target="_blank" rel="noopener">&#128279; CMPG223 repo</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 Marné Vermaak</div>
+    <div class="footer-socials">
+      <a href="https://github.com/nowUCme22" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/marné-vermaak" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:marnevermaak1@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

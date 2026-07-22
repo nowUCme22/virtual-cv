@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume - Marné Vermaak</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .timeline { border-left: 2px solid var(--line); padding-left: 28px; margin-top: 32px; }
+  .timeline-item { position: relative; margin-bottom: 34px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--blue-soft);
+  }
+  .timeline-item h3 { margin-bottom: 2px; }
+  .timeline-dates { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
+  .timeline-item ul { margin: 8px 0 0 0; padding-left: 18px; color: var(--ink-soft); }
+  .timeline-item li { margin-bottom: 4px; }
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+</style>
+</head>
+<body data-page="resume">
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-brand">Marné <span>Vermaak</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="resume.html" data-page="resume">Resume</a></li>
+      <li><a href="skills.html" data-page="skills">Skills</a></li>
+      <li><a href="projects.html" data-page="projects">Projects</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="tight">
+  <div class="wrap reveal" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <div>
+      <div class="section-label">Resume</div>
+      <h1 style="font-size:2rem;">Experience &amp; Education</h1>
+      <p style="max-width:560px;">A condensed, web-friendly version of my CV. Grab the full PDF for the complete detail, including references.</p>
+    </div>
+    <a href="assets/Marne_Vermaak_CV.pdf" class="btn btn-primary" download>&#8681; Download Full CV (PDF)</a>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap reveal">
+    <h2>Professional Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Junior Backend Developer at Code Café</h3>
+        <div class="timeline-dates">February 2026 – Present · Part-time, online</div>
+        <ul>
+          <li>Backend lead across client projects: design and build API endpoints and domain services using ASP.NET Core, Entity Framework Core, and SQL Server.</li>
+          <li>Own database design, schema migrations, and data integrity, including a relational redesign that replaced JSON-blob columns with properly normalised tables.</li>
+          <li>Take on full-stack work when a project needs it, including React/TypeScript frontends and a Python (FastAPI) backend.</li>
+          <li>Coordinate work using ClickUp and GitHub, with weekly team meetings and regular client feedback cycles.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h3>Junior Developer (Frontend &amp; Backend) at Agrisol (IT Department)</h3>
+        <div class="timeline-dates">January – February 2026 · Full-time, on-site</div>
+        <ul>
+          <li>Built a React (Vite + Tailwind) admin/monitoring dashboard for a live WhatsApp AI product, including notifications and activity tracking.</li>
+          <li>Owned the Supabase (PostgreSQL) schema design and migrations, and configured the n8n Cloud automation workflow behind the product.</li>
+          <li>Contributed to a team hackathon project and assisted with frontend development on an additional internal project.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h3>IT Intern at Agrisol (IT Department)</h3>
+        <div class="timeline-dates">December 2025</div>
+        <ul>
+          <li>Designed and built an end-to-end n8n automation workflow, working directly with the IT department's manager to learn the tool.</li>
+          <li>Built a backend (domain model, database schema, REST API endpoints) using ASP.NET Core, Entity Framework Core, and SQL Server.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:8px;"><a href="projects.html">See the full project breakdown and my role in each →</a></p>
+  </div>
+</section>
+
+<section class="tight" style="background:var(--surface-alt);">
+  <div class="wrap reveal">
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="card">
+        <h3 style="font-size:1rem;">North-West University</h3>
+        <p style="margin:0;">BSc Information Technology<br>Expected completion: November 2026</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1rem;">Hoër Volkskool Potchefstroom</h3>
+        <p style="margin:0;">Matric Certificate (NSC), 2022</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap reveal">
+    <h2>Certifications</h2>
+    <ul style="color:var(--ink-soft);">
+      <li>AI Foundations (LLMs, AI fundamentals &amp; n8n workflow automation), Skool community course</li>
+      <li>Data Entry Certificate (available on request)</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 Marné Vermaak</div>
+    <div class="footer-socials">
+      <a href="https://github.com/nowUCme22" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/marné-vermaak" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:marnevermaak1@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
