@@ -247,8 +247,8 @@ p { margin: 0 0 14px 0; color: var(--ink-soft); }
 }
 .flip-hint .arrow { display: inline-block; animation: nudge 1.4s ease-in-out infinite; }
 @keyframes nudge {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .flip-card-wrap { perspective: 1600px; width: 300px; margin: 0 auto; }
