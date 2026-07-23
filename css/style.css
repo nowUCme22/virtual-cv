@@ -399,4 +399,13 @@ p { margin: 0 0 14px 0; color: var(--ink-soft); }
 @media (max-width: 640px) {
   section { padding: 48px 0; }
   .wrap { padding: 0 18px; }
+
+  .terminal-prompt { display: none; }
+  .terminal-input-row::before {
+    content: "$";
+    color: #4bd07a;
+    font-size: 0.85rem;
+  }
+  .terminal-body { font-size: 0.78rem; }
+  .terminal-chips button { font-size: 0.72rem; padding: 4px 10px; }
 }
