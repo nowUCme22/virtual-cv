@@ -65,3 +65,52 @@ var terminalKnowledgeBase = [
 ];
 
 var terminalFallbackAnswer = "I don't have an answer for that yet. Try asking about my job, skills, education, projects, or how to contact me.";
+
+function terminalAnswerFor(question) {
+  var q = question.toLowerCase();
+  var best = null;
+  var bestScore = 0;
+  terminalKnowledgeBase.forEach(function (entry) {
+    var score = 0;
+    entry.keywords.forEach(function (kw) {
+      if (q.indexOf(kw) !== -1) score++;
+    });
+    if (score > bestScore) {
+      bestScore = score;
+      best = entry;
+    }
+  });
+  return best ? best.answer : terminalFallbackAnswer;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('terminalForm');
+  if (!form) return;
+
+  var input = document.getElementById('terminalInput');
+  var body = document.getElementById('terminalBody');
+
+  function ask(question) {
+    var trimmed = question.trim();
+    if (!trimmed) return;
+
+    var qLine = document.createElement('div');
+    qLine.className = 'terminal-line terminal-question';
+    qLine.textContent = trimmed;
+    body.appendChild(qLine);
+
+    var aLine = document.createElement('div');
+    aLine.className = 'terminal-line terminal-answer';
+    aLine.textContent = terminalAnswerFor(trimmed);
+    body.appendChild(aLine);
+
+    body.scrollTop = body.scrollHeight;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    ask(input.value);
+    input.value = '';
+    input.focus();
+  });
+});
