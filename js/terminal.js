@@ -66,20 +66,50 @@ var terminalKnowledgeBase = [
 
 var terminalFallbackAnswer = "I don't have an answer for that yet. Try asking about my job, skills, education, projects, or how to contact me.";
 
+// Words too generic to count as a real signal on their own (question words,
+// articles, pronouns). Stripping these out before matching means a keyword
+// phrase like "why backend" still fires on "Why do you like backend so much?"
+var TERMINAL_STOPWORDS = [
+  'a', 'an', 'the', 'to', 'in', 'of', 'at', 'is', 'are', 'do', 'does', 'on',
+  'about', 'what', 'can', 'you', 'your', 'how', 'why', 'i', 'and', 'it', 'my',
+  'me', 'be'
+];
+
+function terminalWordsFrom(text) {
+  return text.toLowerCase().split(/[^a-z0-9']+/).filter(function (w) {
+    return w && TERMINAL_STOPWORDS.indexOf(w) === -1;
+  });
+}
+
 function terminalAnswerFor(question) {
-  var q = question.toLowerCase();
+  var lowerQuestion = question.toLowerCase();
+  var questionWords = {};
+  terminalWordsFrom(question).forEach(function (w) { questionWords[w] = true; });
+
   var best = null;
   var bestScore = 0;
+
   terminalKnowledgeBase.forEach(function (entry) {
     var score = 0;
-    entry.keywords.forEach(function (kw) {
-      if (q.indexOf(kw) !== -1) score++;
+    var countedWords = {};
+    entry.keywords.forEach(function (phrase) {
+      // Reward an exact phrase match most (handles plurals/near-forms via substring).
+      if (lowerQuestion.indexOf(phrase) !== -1) score += 2;
+      // Also reward individual significant words appearing anywhere in the
+      // question, so reordered or rephrased questions still match.
+      terminalWordsFrom(phrase).forEach(function (w) {
+        if (!countedWords[w] && questionWords[w]) {
+          countedWords[w] = true;
+          score += 1;
+        }
+      });
     });
     if (score > bestScore) {
       bestScore = score;
       best = entry;
     }
   });
+
   return best ? best.answer : terminalFallbackAnswer;
 }
 
