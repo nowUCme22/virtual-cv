@@ -1,4 +1,4 @@
-# 🌐 Marné Vermaak — Virtual CV
+# 🌐 Marné Vermaak: Virtual CV
 
 **CMPG 323 – Profile Development | NWU 2026**
 
@@ -26,25 +26,25 @@ smaller screens.
 
 ## ✨ Interaction & Design
 
-- **Flip-card "meet me" interaction** — clicking the homepage photo flips it over to
+- **Flip-card "meet me" interaction:** clicking the homepage photo flips it over to
   reveal a short list of personal fun facts, then flips back on a second click.
-- **Reveal-on-scroll sections** — content sections fade/slide in as they enter the
+- **Reveal-on-scroll sections:** content sections fade/slide in as they enter the
   viewport instead of appearing all at once.
-- **Colour palette** — light blue / grey / cream, deliberately distinct from the more
+- **Colour palette:** light blue / grey / cream, deliberately distinct from the more
   formal palette used on the printed CV, to keep the two deliverables visually separate.
 - Responsive layout: cards and grids reflow for tablet/mobile, and the nav collapses
   into a toggleable menu below the desktop breakpoint.
 
 ## 🛠️ Tech Stack
 
-- **HTML5** — semantic markup, one file per page
-- **CSS3** — `css/style.css`, custom properties for the colour system, CSS Grid/Flexbox
+- **HTML5:** semantic markup, one file per page
+- **CSS3:** `css/style.css`, custom properties for the colour system, CSS Grid/Flexbox
   for layout, `@media` queries for responsiveness
-- **Vanilla JavaScript** — `js/script.js` handles the flip-card interaction, the mobile
+- **Vanilla JavaScript:** `js/script.js` handles the flip-card interaction, the mobile
   nav toggle, and scroll-triggered reveal animations
-- **Hosting** — GitHub Pages, served from the `main` branch
+- **Hosting:** GitHub Pages, served from the `main` branch
 
-No build tools, bundlers, or frameworks — the whole site runs directly from static
+No build tools, bundlers, or frameworks; the whole site runs directly from static
 files, which keeps setup to "clone and open `index.html`."
 
 ## 🗂️ Structure
@@ -68,7 +68,7 @@ virtual-cv/
 
 ## ▶️ Running Locally
 
-No dependencies or build step required — just open `index.html` in a browser, or serve
+No dependencies or build step required, just open `index.html` in a browser, or serve
 the folder with any static server, e.g.:
 
 ```bash
