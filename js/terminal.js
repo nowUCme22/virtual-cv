@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var input = document.getElementById('terminalInput');
   var body = document.getElementById('terminalBody');
+  var chips = document.getElementById('terminalChips');
 
   function ask(question) {
     var trimmed = question.trim();
@@ -113,4 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
     input.value = '';
     input.focus();
   });
+
+  if (chips) {
+    chips.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        ask(btn.getAttribute('data-q'));
+        input.focus();
+      });
+    });
+  }
 });
